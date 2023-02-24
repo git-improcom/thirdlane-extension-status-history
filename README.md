@@ -33,4 +33,4 @@ systemctl start impro-extension-history
 
 ## USAGE
 The logfile is located here: /var/log/impro_extension_history.log  
-The statistic is collected every 60 minutes
+The statistic is collected every minute
