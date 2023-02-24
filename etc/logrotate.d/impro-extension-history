@@ -1,0 +1,16 @@
+/var/log/impro_extension_history.log {
+    size 50M
+    daily
+    rotate 10
+    missingok
+    compress
+    delaycompress
+    notifempty
+    create 0644 username groupname
+    dateext
+    dateformat -%Y%m%d-%s
+    olddir /var/log/impro_archive/
+    postrotate
+        /usr/bin/kill -HUP $(pidof -x python3 /usr/local/utils/extension_list_history/extension_history.py)
+    endscript
+}

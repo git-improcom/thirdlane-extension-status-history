@@ -1,0 +1,15 @@
+[Unit]
+Description=Improcom extension history service
+After=network.target mariadb.service
+Wants=mariadb.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/usr/local/utils/extension_list_history/
+ExecStart=/usr/bin/python3 /usr/local/utils/extension_list_history/extension_history.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
